@@ -1,0 +1,95 @@
+doctype html
+html(lang="ru")
+  include templates/html-head
+  body
+    include templates/head
+    - var mainmenu_open = 0
+    include templates/main-menu
+    .main-img-box
+      .main-head-title
+        .container.main-head-title__block
+          h1.main-title-text Интернет на дачу! <br><small>В Ленинградской области</small>
+      .main-img
+        //- img(src="images/main-index-img.jpg")
+        img(src='images/main/main_slider_flat_align.svg')
+    .container-fluid.mini-hero.btm-air
+      .container
+        .row
+          .col-md-8.hero-text Интернет по выделенному радиоканалу <br> в пригороде Санкт-Петербурга
+          .right
+            button.btn-main-request Онлайн заявка
+    .container
+      .row.btm-air-dboarder
+        .col-md-1.info-block_icon
+          img(src='images/info-icon.png')
+        .col-md-11.info-block_content
+          p Как правило подключение к сети интернет в области предоставляется в основном сотовыми компаниями и провайдерами спутниковой связи. Соединение посредством 3G/4G модема достаточно удобно, но скорость связи такого подключения зависит от загрузки соты. А спутниковый канал, хоть надежен и устойчив, но дорог, как в плане подключения, так и арендной платы. Более подробную информацию о способах подключения к сети в Ленобласти можно прочитать в разделе «Интернет на даче»
+          p Компания Кантри Онлайн предоставляет услуги беспроводного доступа к сети интернет в ленинградской области по выделенному радиоканалу.
+          p Наше оборудование позволяет предоставить как высокую скорость подключения, так и надежность канала связи. При этом все тарифные планы являются безлимитными, то есть мы не снизим скорость Вашего канала по достижении определенного объема скаченной информации.
+          p Безлимитный интернет в ленобласти от компании Кантри Онлайн является наиболее простым и качественным решением по доступной цене.
+          p Для многих людей наличие стабильного и безлимитного интернета в загородном доме является существенным при принятии решения о съеме жилья в области. Интернет в загородном доме – это удобно, выгодно, недорого.
+          p Если Вам нужен быстрый и безлимитный доступ к глобальной сети в области Санкт-Петербурга – это интернет от компании Кантри Онлайн. Ни один спутниковый или 3G/4G Интернет не сравнится с качественным выделенным каналом.
+          p Позвоните сейчас и задайте интересующие Вас вопросы нашим менеджерам по телефонам 8 (812) 448-88-68, 8 (812) 903-25-56 или на подключение через сайт!
+      .row.btm-air-dboarder
+        .col-md-4.imp-link
+          .imp-link_icon
+            img(src="images/map-icon.jpg")#map-icon
+          .imp-link_desc
+            a(class='imp-link-text' href='#') Карта покрытия
+        .col-md-5.imp-link
+          .imp-link_icon
+            img(src="images/rub-icon.jpg")#rub-icon
+          .imp-link_desc
+            a(class='imp-link-text' href='#') Стоимость подключения
+      h3.main-title Акции и предложения
+      .row.btm-air
+        .col-md-9
+          .row.info-block
+            .col-md-8
+              h4 Подключи соседа
+              p В рамках акции любой клиент нашей компании может получить 1 000 руб. на свой абонентский счет за каждого нового абонента, который при подаче заявки скажет, что он «от соседа с номером договора 1ххххх».
+              a(href='#') Подробнее >
+            .info-block_img
+              img(src="images/friend-icon.png")
+      h3.main-title Популярные тарифы
+      .row.btm-air
+        - var tariflink = "Интернет на дачу, в частный дом"
+        - var tarifname = "Оптимальный"
+        - var tarifspeed = "6"
+        - var tarifprice = "1 300"
+        include templates/tariff-box
+        - var tariflink = "Интернет в частный дом"
+        - var tarifname = "Средненький"
+        - var tarifspeed = "9"
+        - var tarifprice = "1 600"
+        include templates/tariff-box
+        - var tariflink = "Телефония за городом"
+        - var tarifname = "Максимальный"
+        - var tarifspeed = "9"
+        - var tarifprice = "2 400"
+        include templates/tariff-box
+      h3.main-title Свежие новости
+      .row.btm-air
+        .col-md-3
+          .news-date 25 Марта 2015
+          .news-title-link
+            a(class='news-link-text' href='#') О новом порядке списания средств
+        .col-md-3
+          .news-date 21 Февраля 2015
+          .news-title-link
+            a(class='news-link-text' href='#') С наступающим Новым 2015 Годом!
+        .col-md-3
+          .news-date 17 Января 2015
+          .news-title-link
+            a(class='news-link-text' href='#') Перерыв сервиса 09 декабря 2014 года
+        .col-md-3
+          .news-date 2 Января 2015
+          .news-title-link
+            a(class='news-link-text' href='#') Планы развития компании Кантри Онлайн.
+    .container-fluid.footer-fluid
+      .container
+        include templates/footer
+    .modal.fade.bs-example-modal-sm(tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true')
+      .modal-dialog.modal-sm
+        .modal-content Модалька
+  include templates/footer-scripts

@@ -1,0 +1,49 @@
+case mainmenu_open
+  when 0
+    .main-menu-container
+      .main-menu-wrapper
+        .main-menu-box
+          .logo-box
+            img(src="images/top-logo.jpg")
+          ul.main-menu
+            li.main-menu__elem
+              a.main-menu__link Интернет
+              span.main-menu__pointer
+              - var subcatsmenu_open = 0
+              include main-menu_subcats
+            li.main-menu__elem
+              a.main-menu__link Телефония
+              span.main-menu__pointer
+              - var subcatsmenu_open = 0
+              include main-menu_subcats_tel
+          ul.main-menu-second
+            li.main-menu-second__elem
+              a.main-menu-second__link Оплата
+            li.main-menu-second__elem
+              a.main-menu-second__link Клиентам
+            li.main-menu-second__elem
+              a.main-menu-second__link О компании
+  when 1
+    .main-menu-container_open
+      .main-menu-wrapper
+        .main-menu-box
+          .logo-box
+            img(src="images/top-logo.jpg")
+          ul.main-menu
+            li.main-menu__elem_active
+              a.main-menu__link Интернет
+              span.main-menu__pointer
+              - var subcatsmenu_open = 1
+              include main-menu_subcats
+            li.main-menu__elem
+              a.main-menu__link Телефония
+              span.main-menu__pointer
+              - var subcatsmenu_open = 1
+              include main-menu_subcats_tel
+          ul.main-menu-second
+            li.main-menu-second__elem
+              a.main-menu-second__link Оплата
+            li.main-menu-second__elem
+              a.main-menu-second__link Клиентам
+            li.main-menu-second__elem
+              a.main-menu-second__link О компании

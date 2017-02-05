@@ -1,0 +1,24 @@
+doctype html
+html(lang="ru")
+  include templates/html-head
+  body
+    include templates/head
+    - var idSubcatsBox = "main-menu_subcats-box_open"
+    include templates/main-menu
+    .container
+      h3.main-title Акции и специальные предложения
+      .row.top-air.btm-air
+        .col-md-2
+          span.label Бессрочная
+        .col-md-9
+          .row.info-block
+            .col-md-8
+              h4 Подключи соседа
+              p В рамках акции любой клиент нашей компании может получить 1 000 руб. на свой абонентский счет за каждого нового абонента, который при подаче заявки скажет, что он «от соседа с номером договора 1ххххх».
+              a(href='#/test') Подробнее >
+            .info-block_img
+              img(src="images/friend-icon.png")
+    .container-fluid.footer-fluid
+      .container
+        include templates/footer
+  include templates/footer-scripts

@@ -1,0 +1,24 @@
+doctype html
+html(lang="ru")
+  include templates/html-head
+  body
+    include templates/head
+    - var idSubcatsBox = "main-menu_subcats-box_open"
+    include templates/main-menu
+    .container
+      .row
+        .col-md-3
+          ul.content-menu-lift
+            li.content-menu-lift__elem
+              a.content-menu-lift__link Контакты
+            li.content-menu-lift__elem
+              a.content-menu-lift__link пункт-2
+            li.content-menu-lift__elem
+              a.content-menu-lift__link пункт-3
+        .col-md-9
+          h2 Контакты
+          p Информация
+    .container-fluid.footer-fluid
+      .container
+        include templates/footer
+  include templates/footer-scripts

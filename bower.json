@@ -1,0 +1,17 @@
+{
+  "name": "countryonline",
+  "description": "countryonline site",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "countryonline"
+  ],
+  "authors": [
+    "Vladimir Smalenkov"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}

@@ -1,0 +1,72 @@
+doctype html
+html(lang="ru")
+  include templates/html-head
+  body
+    include templates/head
+    - var idSubcatsBox = "main-menu_subcats-box_hidden"
+    include templates/main-menu
+    .container
+      h3.main-title Способы оплаты
+      .row.top-air.btm-air
+        .col-md-12
+          .btn-group
+            button.btn.btn-ui-link_active Интернет
+            button.btn.btn-ui-link Телефония
+      .row
+        .col-md-10
+          .payment-thumbnail
+            .row
+              .col-md-12
+                #accordion.panel-group
+                  .panel.panel-payment
+                    .panel-payment-heading
+                      .panel-title
+                        h3.payment-title
+                          a(id="payment-card" class="payment-link" data-toggle="collapse" data-parent="#accordion" href="#collapseOne") Банковской картой
+                    #collapseOne.panel-collapse.collapse
+                      .panel-payment-body Формы оплаты
+      .row
+        .col-md-10
+          .payment-thumbnail
+            .row
+              .col-md-12
+                #accordion.panel-group
+                  .panel.panel-payment
+                    .panel-payment-heading
+                      .panel-title
+                        h3.payment-title
+                          a(id="payment-bank" class="payment-link" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo") Банковским переводом
+                    #collapseTwo.panel-collapse.collapse
+                      .panel-payment-body
+                        p Необходимо учитывать, что данный способ оплаты не предусматривает автоматического оповещения о переводе средств, то есть деньги будут зачислены на Ваш счет через 2-3 банковских дня.
+                        p Платеж осуществляется по следующим реквизитам:<br> ИНН 7804461854 <br>КПП 780401001 <br>Р/сч 40702810000000021789 <br>в ОАО “ПСКБ”, г. Санкт-Петербург <br>К/сч 30101810000000000852 <br>БИК 044030852 <br>Получатель: ООО “Кантри Онлайн” <br>Назначение платежа: оплата услуг подключения к сети Интернет по договору <br>№11______ от __.__.2012 (Ф.И.О), сумма ______,___ рублей, НДС не <br>облагается.
+      .row
+        .col-md-10
+          .payment-thumbnail
+            .row
+              .col-md-12
+                #accordion.panel-group
+                  .panel.panel-payment
+                    .panel-payment-heading
+                      .panel-title
+                        h3.payment-title
+                          a(id="payment-terminals" class="payment-link" data-toggle="collapse" data-parent="#accordion" href="#collapseThree") Терминалы быстрой оплаты
+                    #collapseThree.panel-collapse.collapse
+                      .panel-payment-body Формы оплаты
+      .row
+        .col-md-10
+          .payment-thumbnail
+            .row
+              .col-md-12
+                #accordion.panel-group
+                  .panel.panel-payment
+                    .panel-payment-heading
+                      .panel-title
+                        h3.payment-title
+                          a(id="payment-web" class="payment-link" data-toggle="collapse" data-parent="#accordion" href="#collapseFour") Системы интернет платежей
+                    #collapseFour.panel-collapse.collapse
+                      .panel-payment-body Формы оплаты
+    .container-fluid.footer-fluid
+      .container
+        include templates/footer
+  include templates/footer-scripts

@@ -1,0 +1,67 @@
+doctype html
+html(lang="ru")
+  include templates/html-head
+  body
+    include templates/head
+    - var idSubcatsBox = "main-menu_subcats-box_open"
+    - var mainmenu_open = 1
+    include templates/main-menu
+    .container
+      h3.main-title Карта покрытия
+      .row.top-air.btm-air
+        .col-md-12
+          ul.btn-content-group
+            li(class="btn-ui-form")
+              a(href="#/vsevolozhsk" class="btn btn-ui-link") Всеволожск
+            li(class="btn-ui-form")
+              a(href="#/romanovka" class="btn btn-ui-link") Романовка
+            li(class="btn-ui-form")
+              a(href="#/syargy" class="btn btn-ui-link") Сярьги
+            li(class="btn-ui-form")
+              a(href="#/voeikovo" class="btn btn-ui-link") Воейково
+            li(class="btn-ui-form")
+              a(href="#/agalatovo" class="btn btn-ui-link") Агалатово
+            li(class="btn-ui-form")
+              a(href="#/koltushi" class="btn btn-ui-link") Колтуши
+            li(class="btn-ui-form")
+              a(href="#/toksovo" class="btn btn-ui-link") Токсово
+            li(class="btn-ui-form")
+              a(href="#/sheglovo" class="btn btn-ui-link") Щеглово
+            li(class="btn-ui-form")
+              a(href="#/koltushi" class="btn btn-ui-link") Колтуши
+      .row
+        .col-md-12
+          script(type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=i81ydiMQK5wDxHy96A9B-uxDXW5GLNbV&width=940&height=300&lang=ru_RU&sourceType=constructor&scroll=true")
+      .row.top-air.btm-air
+        .col-md-12
+          #arealtextid Это простой стандартный текст
+    .container-fluid.footer-fluid
+      .container
+        include templates/footer
+  include templates/footer-scripts
+  script(type='text/javascript').
+    $.fn.extend({
+      animateCss: function (animationName) {
+        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+        $(this).addClass('animated ' + animationName).one(animationEnd, function () {
+          $(this).removeClass('animated ' + animationName);
+        });
+      }
+    })
+    ;(function ($) {
+      var app = $.sammy(function () {
+
+        this.get('#/vsevolozhsk', function () {
+          $("#arealtextid").load('htmlmaps/vsevolozhsk.html').animateCss('fadeInUp');
+        });
+
+        this.get('#/romanovka', function () {
+          $("#arealtextid").load('htmlmaps/romanovka.html').animateCss('fadeInUp');
+        });
+
+      });
+
+      $(function () {
+        app.run()
+      });
+    })(jQuery);

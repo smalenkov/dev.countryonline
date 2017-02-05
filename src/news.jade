@@ -1,0 +1,59 @@
+doctype html
+html(lang="ru")
+  include templates/html-head
+  body
+    include templates/head
+    - var idSubcatsBox = "main-menu_subcats-box_open"
+    include templates/main-menu
+    .container
+      h3.main-title Новости
+      .row.top-air.btm-air
+        .col-md-12
+          form(action="#" class="btn-ui-form")
+            button.btn.btn-ui-link 2014
+          form(action="#" class="btn-ui-form")
+            button.btn.btn-ui-link 2015
+      .row
+        .col-md-10
+          .row
+            .col-md-12.news-row
+              .news-round.text-center 30 <small>декабря</small>
+              h3.news-title <a>Сердечно поздравляем Вас с наступающим Новым Годом!</a>
+          .row
+            .col-md-12.news-row
+              .news-round.text-center 20 <small>ноября</small>
+              h3.news-title <a>Перерыв сервиса приема платежей</a>
+          .row
+            .col-md-12.news-row
+              .news-round.text-center 9 <small>ноября</small>
+              h3.news-title <a>Перерыв сервиса 10 июля</a>
+    .container-fluid.footer-fluid
+      .container
+        include templates/footer
+  include templates/footer-scripts
+  script(type='text/javascript').
+    $.fn.extend({
+      animateCss: function (animationName) {
+        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+        $(this).addClass('animated ' + animationName).one(animationEnd, function () {
+          $(this).removeClass('animated ' + animationName);
+        });
+      }
+    })
+    ;(function ($) {
+      var app = $.sammy(function () {
+
+        this.get('#/vsevolozhsk', function () {
+          $("#arealtextid").load('htmlmaps/vsevolozhsk.html').animateCss('fadeInUp');
+        });
+
+        this.get('#/romanovka', function () {
+          $("#arealtextid").load('htmlmaps/romanovka.html').animateCss('fadeInUp');
+        });
+
+      });
+
+      $(function () {
+        app.run()
+      });
+    })(jQuery);

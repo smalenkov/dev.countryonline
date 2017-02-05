@@ -1,0 +1,45 @@
+doctype html
+html(lang="ru")
+  include templates/html-head
+  body
+    include templates/head
+    - var idSubcatsBox = "main-menu_subcats-box_open"
+    include templates/main-menu
+    .container
+      h3.main-title Тарифы
+      .row.top-air.btm-air
+        .col-md-12
+          .btn-group
+            button.btn.btn-ui-link_active Интернет в коттедж
+            button.btn.btn-ui-link Интернет в загородный офис
+      .row.btm-air
+        - var tarifname = "Базовый"
+        - var tarifspeed = "4"
+        - var tarifprice = "900"
+        include templates/internet-tariff-box
+        - var tarifname = "Оптимальный"
+        - var tarifspeed = "6"
+        - var tarifprice = "1 400"
+        include templates/internet-tariff-box
+        - var tarifname = "Максимальный"
+        - var tarifspeed = "9"
+        - var tarifprice = "2 900"
+        include templates/internet-tariff-box
+      h3.main-title Подключение и стоимость оборудования
+      .row.top-air.btm-air
+        .col-md-1.larg-ol-num 1
+        .col-md-5
+          .block-description Монтаж антенны к дымоходу или фронтону с помощью кронштейна, либо хомутов
+          .block-img
+            img(src='images/main/loc-montage-1.jpg')
+          .block-price <small>От</small> 6 000 <small>руб.</small>
+        .col-md-1.larg-ol-num 2
+        .col-md-5
+          .block-description Монтаж антенны на телескопическую мачту с оттяжками.
+          .block-img
+            img(src='images/main/loc-montage-1.jpg')
+          .block-price <small>От</small> 25 000 <small>руб.</small>
+    .container-fluid.footer-fluid
+      .container
+        include templates/footer
+  include templates/footer-scripts

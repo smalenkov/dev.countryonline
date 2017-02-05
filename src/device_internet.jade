@@ -1,0 +1,13 @@
+doctype html
+html(lang="ru")
+  include templates/html-head
+  body
+    include templates/head
+    - var idSubcatsBox = "main-menu_subcats-box_open"
+    include templates/main-menu
+    .container
+      include templates/devises
+    .container-fluid.footer-fluid
+      .container
+        include templates/footer
+  include templates/footer-scripts
